@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import imageLoader from '../image-loader';
 
 const images = [
   {
@@ -56,6 +57,7 @@ export default function Hero() {
             className="absolute inset-0"
           >
             <Image
+              loader={imageLoader}
               src={images[currentImageIndex].src}
               alt={images[currentImageIndex].alt}
               fill
