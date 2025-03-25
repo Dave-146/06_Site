@@ -24,21 +24,18 @@ jobs:
         run: npm ci
         
       - name: Build
-        run: npm run build
+        run: |
+          npm run build
+          cp -r out/* .
+          rm -rf out
+          touch .nojekyll
         env:
           NEXT_PUBLIC_BASE_PATH: /06_Site
-          
-      - name: Prepare for deployment
-        run: |
-          mkdir -p out
-          touch out/.nojekyll
-          ls -la out/
-          cat out/index.html || echo "index.html not found"
         
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: out
+          folder: .
           clean: true
           single-commit: true 

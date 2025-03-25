@@ -4,12 +4,11 @@ const nextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/06_Site' : '',
   images: {
     unoptimized: true,
+    domains: [],
     remotePatterns: [],
   },
   assetPrefix: process.env.NODE_ENV === 'production' ? '/06_Site/' : '',
   trailingSlash: true,
-  poweredByHeader: false,
-  compress: true,
   reactStrictMode: true,
   swcMinify: true,
 }
