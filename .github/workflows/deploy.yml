@@ -28,8 +28,10 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /06_Site
           
-      - name: Touch .nojekyll
-        run: touch out/.nojekyll
+      - name: Create .nojekyll file
+        run: |
+          mkdir -p out
+          touch out/.nojekyll
         
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
