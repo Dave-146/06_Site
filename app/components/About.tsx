@@ -58,7 +58,7 @@ export default function About() {
               </p>
               <p>
                 As a full time boarding kennel and cattery we find that it is important to look after the mental as well 
-                as the physical side of your pet’s well being. Kindness, a bit of play, a kind word and sometimes just a 
+                as the physical side of your pet’s well being. Kindness, a bit of play,and sometimes just a 
                 good scratch behind the ear does the job but whatever it takes, we do it!
               </p>
             </div>
