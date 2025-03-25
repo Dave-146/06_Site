@@ -11,12 +11,14 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+          cache: 'npm'
           
       - name: Install dependencies
         run: npm ci
@@ -25,10 +27,14 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /06_Site
+          
+      - name: Touch .nojekyll
+        run: touch out/.nojekyll
         
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: out
-          clean: true 
+          clean: true
+          single-commit: true 
