@@ -28,10 +28,12 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /06_Site
           
-      - name: Create .nojekyll file
+      - name: Prepare for deployment
         run: |
           mkdir -p out
           touch out/.nojekyll
+          ls -la out/
+          cat out/index.html || echo "index.html not found"
         
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4

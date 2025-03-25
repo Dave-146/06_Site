@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/06_Site',
+  basePath: process.env.NODE_ENV === 'production' ? '/06_Site' : '',
   images: {
     unoptimized: true,
     remotePatterns: [],
   },
-  assetPrefix: '/06_Site/',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/06_Site/' : '',
   trailingSlash: true,
   poweredByHeader: false,
   compress: true,
