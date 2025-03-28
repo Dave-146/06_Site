@@ -42,7 +42,7 @@ export default function Contact() {
           from_email: formData.email,
           phone: formData.phone,
           message: formData.message,
-          to_email: 'corlicanpetmotel@hotmail.com'
+          to_email: 'alert-plus7v@icloud.com'
         }
       );
 
