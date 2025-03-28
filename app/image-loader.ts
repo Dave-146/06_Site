@@ -5,10 +5,19 @@ const imageLoader: ImageLoader = ({ src, width, quality }: {
   width?: number;
   quality?: number;
 }): string => {
+  // Handle external URLs
+  if (src.startsWith('http')) {
+    return src
+  }
+
+  // For GitHub Pages deployment
   const baseUrl = process.env.NODE_ENV === 'production' ? '/06_Site' : ''
-  // Handle both absolute and relative paths
-  const imagePath = src.startsWith('http') ? src : `${baseUrl}${src.startsWith('/') ? src : `/${src}`}`
-  return imagePath
+  
+  // Ensure the path starts with a forward slash and doesn't have double slashes
+  const normalizedSrc = src.startsWith('/') ? src : `/${src}`
+  const path = `${baseUrl}${normalizedSrc}`.replace(/\/+/g, '/')
+  
+  return path
 }
 
 export default imageLoader 
