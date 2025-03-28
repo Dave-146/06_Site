@@ -1,21 +1,20 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 const images = [
   {
-    src: "/images/about/about-1.webp",
+    src: "./images/about/about-1.webp",
     alt: "Corlican Pet Motel exterior"
   },
   {
-    src: "/images/about/about-2.webp",
+    src: "./images/about/about-2.webp",
     alt: "Pet play area"
   },
   {
-    src: "/images/about/about-3.webp",
+    src: "./images/about/about-3.webp",
     alt: "Staff with pets"
   }
 ]
@@ -58,7 +57,7 @@ export default function About() {
               </p>
               <p>
                 As a full time boarding kennel and cattery we find that it is important to look after the mental as well 
-                as the physical side of your pet’s well being. Kindness, a bit of play,and sometimes just a 
+                as the physical side of your pet's well being. Kindness, a bit of play,and sometimes just a 
                 good scratch behind the ear does the job but whatever it takes, we do it!
               </p>
             </div>
@@ -81,12 +80,10 @@ export default function About() {
                 transition={{ duration: 0.5 }}
                 className="absolute inset-0"
               >
-                <Image
+                <img
                   src={images[currentImageIndex].src}
                   alt={images[currentImageIndex].alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover w-full h-full"
                 />
               </motion.div>
             </AnimatePresence>

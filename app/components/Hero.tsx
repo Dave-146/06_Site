@@ -1,23 +1,21 @@
 'use client'
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import imageLoader from '../image-loader';
 
 const images = [
   {
-    src: '/images/hero/entrance-mural.webp',
+    src: './images/hero/entrance-mural.webp',
     alt: 'Corlican Pet Motel entrance with charming mural featuring pets and trees',
     caption: 'Welcome to Corlican Pet Motel'
   },
   {
-    src: '/images/hero/kennels-view.webp',
+    src: './images/hero/kennels-view.webp',
     alt: 'Spacious outdoor kennels with grassy exercise area',
     caption: 'Spacious Outdoor Facilities'
   },
   {
-    src: '/images/hero/signage.webp',
+    src: './images/hero/signage.webp',
     alt: 'Corlican Pet Motel Boarding Kennels sign',
     caption: 'Professional Pet Boarding Services'
   }
@@ -56,14 +54,10 @@ export default function Hero() {
             }}
             className="absolute inset-0"
           >
-            <Image
-              loader={imageLoader}
+            <img
               src={images[currentImageIndex].src}
               alt={images[currentImageIndex].alt}
-              fill
-              className="object-cover"
-              priority={currentImageIndex === 0}
-              sizes="100vw"
+              className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 bg-black/30" />
           </motion.div>
