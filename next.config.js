@@ -5,9 +5,8 @@ const nextConfig = {
   assetPrefix: process.env.NODE_ENV === 'production' ? '/06_Site' : '',
   images: {
     unoptimized: true,
-    loader: 'custom',
-    loaderFile: './app/image-loader.ts',
-    path: process.env.NODE_ENV === 'production' ? '/06_Site' : '',
+    remotePatterns: [],
+    domains: [],
   },
   trailingSlash: true,
   reactStrictMode: true,

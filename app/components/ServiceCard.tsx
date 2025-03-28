@@ -39,7 +39,6 @@ export default function ServiceCard({
   const handleBookNow = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsExpanded(false);
-    // Small delay to allow the modal to close before scrolling
     setTimeout(() => {
       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
     }, 100);
@@ -53,12 +52,10 @@ export default function ServiceCard({
         onClick={() => !isExpanded && setIsExpanded(true)}
       >
         <div className="relative h-48">
-          <Image
+          <img
             src={mainImage}
             alt={title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover w-full h-full"
           />
         </div>
         <div className="p-6">
@@ -105,7 +102,6 @@ export default function ServiceCard({
               className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Close Button */}
               <button
                 onClick={() => setIsExpanded(false)}
                 className="absolute top-4 right-4 text-gray-400 hover:text-primary transition-colors z-10"
@@ -113,7 +109,6 @@ export default function ServiceCard({
                 <FaTimes className="w-6 h-6" />
               </button>
 
-              {/* Image Carousel */}
               <div className="relative h-64 md:h-96 bg-gray-100">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -124,17 +119,14 @@ export default function ServiceCard({
                     transition={{ duration: 0.5 }}
                     className="absolute inset-0"
                   >
-                    <Image
+                    <img
                       src={images[currentImageIndex].src}
                       alt={images[currentImageIndex].alt}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1200px) 100vw, 1200px"
+                      className="object-cover w-full h-full"
                     />
                   </motion.div>
                 </AnimatePresence>
 
-                {/* Carousel Controls */}
                 <div className="absolute inset-0 flex items-center justify-between p-4">
                   <button
                     onClick={(e) => {
@@ -156,7 +148,6 @@ export default function ServiceCard({
                   </button>
                 </div>
 
-                {/* Carousel Indicators */}
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
                   {images.map((_, idx) => (
                     <button
@@ -173,7 +164,6 @@ export default function ServiceCard({
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-6">
                 <div className="flex items-baseline mb-4">
                   <h2 className="text-3xl font-display text-primary">{title}</h2>
