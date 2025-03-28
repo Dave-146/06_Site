@@ -5,7 +5,7 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 // Initialize EmailJS with your public key
-emailjs.init('4PSJIVLdVusMig6Ba');
+emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '');
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -34,16 +34,19 @@ export default function Contact() {
     setStatus({ type: '', message: '' });
 
     try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        to_email: 'alert-plus7v@icloud.com',
+        reply_to: formData.email
+      };
+
       const result = await emailjs.send(
-        'service_yrhzmo9', // Your service ID
-        'template_sn8uqcg', // Your template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-          to_email: 'alert-plus7v@icloud.com'
-        }
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+        templateParams
       );
 
       if (result.status === 200) {
@@ -59,6 +62,7 @@ export default function Contact() {
         });
       }
     } catch (error) {
+      console.error('EmailJS error:', error);
       setStatus({
         type: 'error',
         message: 'Sorry, something went wrong. Please try again later.'
