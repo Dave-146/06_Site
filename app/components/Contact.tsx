@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
-// Initialize EmailJS
-emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '');
+// Initialize EmailJS with your public key
+emailjs.init('4PSJIVLdVusMig6Ba');
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -35,16 +35,15 @@ export default function Contact() {
 
     try {
       const result = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+        'service_yrhzmo9', // Your service ID
+        'template_sn8uqcg', // Your template ID
         {
           from_name: formData.name,
           from_email: formData.email,
           phone: formData.phone,
           message: formData.message,
           to_email: 'corlicanpetmotel@hotmail.com'
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        }
       );
 
       if (result.status === 200) {
