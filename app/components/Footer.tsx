@@ -23,8 +23,9 @@ export default function Footer() {
             <h3 className="font-display text-lg mb-4">Contact Us</h3>
             <div className="space-y-2 text-gray-400">
               <p>Corlican, Killurin, </p>
-              <p>Enniscorthy, Wexford, Y21 V6Y9</p>
-              <p>Phone: +353 (86) 223 2100</p>
+              <p>Enniscorthy, Wexford, Y21 T6X5</p>
+              <p>Assumpta: +353 (86) 223 2100</p>
+              <p>Mary: +353 (86) 355 1132</p>
               <p>Email: corlicanpetmotel@hotmail.com</p>
             </div>
           </div>

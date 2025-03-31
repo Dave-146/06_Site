@@ -91,7 +91,8 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="font-display text-lg mb-1">Phone</h4>
-                <p className="text-gray-600">+353 (053) 937 1234</p>
+                <p className="text-gray-600">+353 (86) 223 2100</p>
+                <p className="text-gray-600">+353 (86) 355 1132</p>
                 <p className="text-gray-600">Available 9am - 7pm daily</p>
               </div>
             </div>
@@ -103,7 +104,7 @@ export default function Contact() {
               <div>
                 <h4 className="font-display text-lg mb-1">Email</h4>
                 <p className="text-gray-600">corlicanpetmotel@hotmail.com</p>
-                <p className="text-gray-600">We'll respond within 24 hours</p>
+                <p className="text-gray-600">We usually respond within 24 hours</p>
               </div>
             </div>
 
@@ -115,7 +116,7 @@ export default function Contact() {
                 <h4 className="font-display text-lg mb-1">Location</h4>
                 <p className="text-gray-600">Killurin, Wexford</p>
                 <p className="text-gray-600">Enniscorthy, Wexford</p>
-                <p className="text-gray-600">Y21 V6Y9</p>
+                <p className="text-gray-600">Y21 T6X5</p>
               </div>
             </div>
 
