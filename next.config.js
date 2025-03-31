@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? '/06_Site' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/06_Site' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/corlican_pet_motel_typescript' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/corlican_pet_motel_typescript' : '',
   images: {
     unoptimized: true,
     remotePatterns: [],
