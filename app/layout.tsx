@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: 'Corlican Pet Motel - Pet Boarding in Wexford',
   description: 'Premium pet boarding services in Wexford. Providing a safe, comfortable, and loving environment for your pets while you are away.',
   keywords: 'pet motel, pet boarding, dog boarding, cat boarding, pet hotel, Wexford, Killurin, Corlican, Enniscorthy, Wexford, Ireland, dog daycare, cat daycare, pet care, pet sitting',
-  metadataBase: new URL('https://corlicanpetmotel.ie'),
+  metadataBase: new URL('https://dave-146.github.io/corlican_pet_motel_typescript'),
   openGraph: {
     title: 'Corlican Pet Motel - Pet Boarding in Wexford',
     description: 'Premium pet boarding services in Wexford',
@@ -51,9 +51,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className={`${inter.className} bg-white`}>
+      <body className={`${inter.className} bg-white min-h-screen flex flex-col`}>
         <Header />
-        {children}
+        <main className="flex-grow">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
